@@ -4,7 +4,7 @@ Los errores y las validaciones a mostrar deben ser las siguientes:
 
 - **Nombre:** "El campo nombre solo puede contener texto";
 - **Apellido:** "El campo apellido solo puede contener texto";
-- **DNI:** "El DNI no puede ser mayor a 8 caracteres";
+- **Número de identificación personal:** "El número de identificación personal debe contener solo números";
 - **Email:** "El formato del email no es válido";
 - **Contraseña:** En este caso utilizaremos 2. "La contraseña debe tener al menos 8, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter especial" y "Las contraseñas no coinciden";
 - **Términos y condiciones de uso:** "Debe aceptar los términos y condiciones".
