@@ -1,4 +1,4 @@
-Basándonos en el [formulario de registro de cliente](mumukiproject/mumuki-guia-html-ejercitacion-formularios/4) creado con anterioridad, realizaremos algunas validaciones sobre este. Pero primero, agregaremos una etiqueta small debajo de cada input con un color rojo y de inicio no va a visualizarse.
+Basándonos en el [formulario de registro de cliente](mumukiproject/mumuki-guia-html-ejercitacion-formularios-generico/4) creado con anterioridad, realizaremos algunas validaciones sobre este. Pero primero, agregaremos una etiqueta small debajo de cada input con un color rojo y de inicio no va a visualizarse.
 
 Los errores y las validaciones a mostrar deben ser las siguientes:
 
