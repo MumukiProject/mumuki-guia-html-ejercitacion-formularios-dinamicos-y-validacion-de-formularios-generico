@@ -39,11 +39,11 @@
         document.querySelector("div[class='card'] p").should.exist;
       }); 
       
-      it("Si en el título escribimos 'La biografía de Ada Lovelace', en la card se visualiza ese título", () => {
+      it("Si en el título escribimos 'La biografía de Nikola Tesla', en la card se visualiza ese título", () => {
         let inputTitulo = document.querySelectorAll('input')[1];
-        inputTitulo.value = 'La biografía de Ada Lovelace';
+        inputTitulo.value = 'La biografía de Nikola Tesla';
         _dispatch_("change",  inputTitulo);
-        document.querySelector("div[class='card'] h1").should.have.trimmed.text('La biografía de Ada Lovelace');
+        document.querySelector("div[class='card'] h1").should.have.trimmed.text('La biografía de Nikola Tesla');
       });
       
       it("Si completamos el input para la url, en la card se ve la imagen correspondiente a la misma", () => {
