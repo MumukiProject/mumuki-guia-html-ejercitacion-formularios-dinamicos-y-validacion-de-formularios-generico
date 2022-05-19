@@ -1,0 +1,54 @@
+/*<output#*//*#output>*/
+/*<tests#*/describe("", function() {
+  context("", () => {
+    describe("", () => {
+      beforeEach(() => {
+        _resetDocument_();
+      });
+      
+      it("Si enviamos un comentario de menos de 240 caracteres se muestra Comentario enviado", () => {
+        let texto = document.getElementsByTagName("textarea")[0];
+        let boton = document.getElementsByTagName('button')[0];
+        texto.value = 'Esta es una cadena de 35 caracteres';
+        _dispatch_("change",  texto);
+        _dispatch_("click",  boton);
+        document.getElementsByTagName('span')[0].should.have.trimmed.text("Comentario enviado");
+      });
+      
+      it("Si ingresamos un comentario de 35 caracteres el span muestra 205/240 caracteres", () => {
+        let texto = document.getElementsByTagName("textarea")[0];
+        let boton = document.getElementsByTagName('button')[0];
+        texto.value = 'Esta es una cadena de 35 caracteres';
+        _dispatch_("change",  texto);
+        document.getElementsByTagName('span')[0].should.have.trimmed.text("205/240 caracteres");
+      });
+      
+      it("Si ingresamos un comentario de más de 240 caracteres el borde del textarea cambia a color rojo", () => {
+        let texto = document.getElementsByTagName("textarea")[0];
+        let boton = document.getElementsByTagName('button')[0];
+        texto.value = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+        _dispatch_("change",  texto);
+        document.getElementsByTagName('textarea')[0].should.have.style("border-color", "red");
+      });
+      
+      it("Si enviamos un comentario de más de 240 caracteres no se envía", () => {
+        let texto = document.getElementsByTagName("textarea")[0];
+        let boton = document.getElementsByTagName('button')[0];
+        texto.value = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+        _dispatch_("click",  boton);
+        _dispatch_("change",  texto);
+        document.getElementsByTagName('span')[0].should.have.trimmed.text('-206/240 caracteres');
+      });
+      
+      it("Si ingresamos un comentario de 35 caracteres el borde del textarea se colorea de verde ", () => {
+        let texto = document.getElementsByTagName("textarea")[0];
+        texto.value = 'Esta es una cadena de 35 caracteres';
+        _dispatch_("change",  texto);
+        document.getElementsByTagName('textarea')[0].should.have.style("border-color", "green");
+      });
+      
+    });
+  });  
+});/*#tests>*/
+/*<options#*/output_ignore_scripts: true
+output_ignore_styles: true/*#options>*/
